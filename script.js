@@ -4,10 +4,10 @@ marked.setOptions({
 });
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor({ placeholderMarkdown }) {
+    super(placeholderMarkdown);
     this.state = {
-      markdown: props.placeholderMarkdown
+      markdown: placeholderMarkdown
     };
     this.setMarkdown = this.setMarkdown.bind(this);
   }
