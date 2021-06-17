@@ -24,9 +24,7 @@ class App extends React.Component {
           React Markdown Previewer
         </h1>
         <div id="container">
-          <h2>Editor</h2>
           <Editor value={this.state.markdown} onChange={this.setMarkdown} />
-          <h2>Preview</h2>
           <Previewer htmlOutput={this.htmlOutput()} />
         </div>
       </div>
@@ -36,17 +34,33 @@ class App extends React.Component {
 
 const Editor = ({ value, onChange }) => {
   return (
-    <textarea
-      id="editor"
-      rows="20"
-      value={value}
-      onChange={onChange}
-    ></textarea>
+    <div id="editor-container">
+      <div id="editor-header">
+        <h2>
+          <i class="fas fa-code header-icon"></i>Editor
+        </h2>
+      </div>
+      <textarea
+        id="editor"
+        rows="20"
+        value={value}
+        onChange={onChange}
+      ></textarea>
+    </div>
   );
 };
 
 const Previewer = ({ htmlOutput }) => {
-  return <div dangerouslySetInnerHTML={htmlOutput} id="preview" />;
+  return (
+    <div id="preview-container">
+      <div id="preview-header">
+        <h2>
+          <i class="fas fa-eye header-icon"></i>Preview
+        </h2>
+      </div>
+      <div dangerouslySetInnerHTML={htmlOutput} id="preview" />
+    </div>
+  );
 };
 
 const placeholderMarkdown = `# Header 
