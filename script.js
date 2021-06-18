@@ -20,7 +20,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1 id="title" class="text-center">
+        <h1 id="title" className="text-center">
           React Markdown Previewer
         </h1>
         <div id="container">
@@ -37,7 +37,7 @@ const Editor = ({ value, onChange }) => {
     <div id="editor-container">
       <div id="editor-header">
         <h2>
-          <i class="fas fa-code header-icon"></i>Editor
+          <i className="fas fa-code header-icon"></i>Editor
         </h2>
       </div>
       <textarea
@@ -55,7 +55,7 @@ const Previewer = ({ htmlOutput }) => {
     <div id="preview-container">
       <div id="preview-header">
         <h2>
-          <i class="fas fa-eye header-icon"></i>Preview
+          <i className="fas fa-eye header-icon"></i>Preview
         </h2>
       </div>
       <div dangerouslySetInnerHTML={htmlOutput} id="preview" />
